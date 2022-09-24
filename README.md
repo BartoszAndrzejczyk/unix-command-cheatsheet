@@ -4,4 +4,9 @@
 
 ### commit
 
-`git commit` saves changes 
+`git commit` saves changes
+
+Example:
+```console
+$ git commit -m "Enter here a message"
+```
