@@ -25,5 +25,22 @@ $ git commit -m "Enter here a message"
 Sample 1
 ```console
 $ echo "frog" | grep "froo*g"
+frog
 ```
-outputs:
+The pattern was found because second `o` was matched 0 times.
+Sample 2
+```console
+$ echo "froooooooog" | grep "froo*g"
+froooooooog
+```
+The pattern was found because `o` was matched many times.
+
+- `+` - matches 1 or more times
+```console
+$ echo "frog" | grep "froo+g"
+```
+Grep does not find second `o` one or more times in the word "frog".
+```console
+$ echo "frooog" | grep -E "froo+g"
+```
+grep found one or more `o` in "frooog" 
