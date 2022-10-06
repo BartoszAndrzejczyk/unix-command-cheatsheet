@@ -44,3 +44,14 @@ Grep does not find second `o` one or more times in the word "frog".
 $ echo "frooog" | grep -E "froo+g"
 ```
 grep found one or more `o` in "frooog" 
+- `?` matches 0 or 1 time
+```console
+$ echo "frog" | grep -E "froo?g"
+frog
+```
+The regex expects text frog with 1 or 2 `o`, 1 was given.
+
+```console
+$ echo "frooog" | grep -E "froo?g"
+```
+The regex expects text frog with 1 or 2 `o`, 3 were given.
