@@ -1,15 +1,6 @@
 # unix-command-cheatsheet
 
-## git
 
-### commit
-
-`git commit` saves changes
-
-Example:
-```console
-$ git commit -m "Enter here a message"
-```
 ## Terminal navigation
 - `ctrl+a` - moves cursor to the begginig of a line
 - `ctrl+e` - moves cursor to the end of a line
