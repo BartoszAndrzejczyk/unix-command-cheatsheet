@@ -3,3 +3,6 @@
 ```console
 $ mv branchname., branchname.
 ```
+- `touch` The touch command creates files in Linux through the terminal.
+```console
+$ touch 'branchname' 
