@@ -33,7 +33,7 @@ $ git diff
 ``` console
 $ git merge <branchname> 
 ```
-## new branch
+### checkout
 `git checkout -b` creates a new branch.
 ```console
 $ git checkout -b <branchname>
