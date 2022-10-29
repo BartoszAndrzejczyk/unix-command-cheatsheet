@@ -35,3 +35,35 @@ The regex expects text frog with 1 or 2 `o`, 1 was given.
 $ echo "frooog" | grep -E "froo?g"
 ```
 The regex expects text frog with 1 or 2 `o`, 3 were given.
+
+- `{2}` maches 2 times
+```console
+$ echo "froog" | grep -E "fro{2}g"
+froog
+```
+```console
+$ echo "frooog" | grep -E "fro{2}g"
+```
+
+- `{2,}` matches 2 or more times
+```console
+$ echo "froog" | grep -E "fro{2,}g"
+froog
+```
+```console
+$ echo "frog" | grep -E "fro{2,}g"
+```
+- `{2,5}` matches from 2 to 5 times
+```console
+$ echo "froooog" | grep -E "fro{2,5}g"
+froooog
+```
+```console
+$ echo "frog" | grep -E "fro{2,5}g"
+```
+- `or operator` Allows matching one of arguments separated by pipe(|)
+```console 
+$ echo "Ale" | grep -E "A(la|ze|le)"
+Ale
+$ echo "Ale" | grep -E "A(la|ze)"
+```
