@@ -67,3 +67,23 @@ $ echo "Ale" | grep -E "A(la|ze|le)"
 Ale
 $ echo "Ale" | grep -E "A(la|ze)"
 ```
+- `\d` finds string that has number in it (\D is reverse).
+ Matches a digit (equivalent to [0-9])
+```console
+$ echo "frog123" | grep -P "\d"
+frog123
+$ echo "frog123" | grep -P "\D"
+```
+- `\w` Matches any word character (equivalent to [a-zA-Z0-9_])
+ ```console
+$ echo "rosfjafjpsa" | grep -P "\w"
+rosfjafjpsa
+$ echo "frog123" | grep -P "\w"
+frog123
+```
+-`\s` matches any whitespace character 
+```console
+$ echo "f r o g 123" | grep -P "\s"
+f r o g 123
+$ echo "frog123" | grep -P "\s"
+```
