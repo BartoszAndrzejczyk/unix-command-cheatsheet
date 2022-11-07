@@ -61,29 +61,47 @@ froooog
 ```console
 $ echo "frog" | grep -E "fro{2,5}g"
 ```
-- `or operator` Allows matching one of arguments separated by pipe(|)
+- `or operator` allows matching one of arguments separated by pipe(|)
 ```console 
 $ echo "Ale" | grep -E "A(la|ze|le)"
 Ale
 $ echo "Ale" | grep -E "A(la|ze)"
 ```
-- `\d` finds string that has number in it (\D is reverse).
+- `\d` finds string that has number in it (\D is reverse of it).
  Matches a digit (equivalent to [0-9])
 ```console
 $ echo "frog123" | grep -P "\d"
 frog123
 $ echo "frog123" | grep -P "\D"
 ```
-- `\w` Matches any word character (equivalent to [a-zA-Z0-9_])
+- `\w` matches any word character (equivalent to [a-zA-Z0-9_])(\W is reverse of it)
  ```console
 $ echo "rosfjafjpsa" | grep -P "\w"
 rosfjafjpsa
-$ echo "frog123" | grep -P "\w"
-frog123
+$ echo "$.*" | grep -P "\w"
 ```
--`\s` matches any whitespace character 
+-`\s` matches any whitespace character (\S is reverse of it)
 ```console
 $ echo "f r o g 123" | grep -P "\s"
 f r o g 123
 $ echo "frog123" | grep -P "\s"
+```  
+## ancors
+- `^` matches the start of a line 
+```console
+$ echo "super frog" | grep -P "^[a-z]{1,2}"
+super frog
+$ echo "214super frog" | grep -P "^[a-z]{1,2}"
+```
+- `$` matches the end of a line
+```console
+$ echo "super frog" | grep -P "[a-z]{1,2}$"
+super frog
+$ echo "super frog132" | grep -P "[a-z]{1,2}$"
+```
+- `^$` matches start and end of a line
+```console
+$ echo "frog" | grep -P "^[a-z]{1,4}$"
+frog
+$ echo "froog" | grep -P "^[a-z]{1,4}$"
 ```
